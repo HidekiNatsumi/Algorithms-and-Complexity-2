@@ -14,7 +14,7 @@ def recursive(index, words):
 
 
 lines = []
-with open('corrupted.txt') as f:        # rename text file -------------------------------
+with open('a2Input.txt') as f:        # rename text file -------------------------------
     lines = f.readlines()
 
 dictionary = {}
