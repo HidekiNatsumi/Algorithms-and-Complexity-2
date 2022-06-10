@@ -22,10 +22,26 @@ class Solution:
             return result
 
         return helper(s)
+    
+with open("a2Input") as f:
+    lines = f.readlines()
+    lines = (line for line in lines if line)
 
+    list = []
 
-s = "happyfamiliesareallalikeeveryunhappyfamilyisunhappyinitsownway"
-wordDictI = ["sad","happy","family","families","all","one","any","are","is","all","none","alike","unlike","like","every","each","any","unhappy","its","his","their","way","in","it","its","own","way"]
+    for line in lines:
+        list.append(line.strip())
 
-test = Solution
-print(Solution.wordBreak(self="", s=s, wordDict=wordDictI))
+    n = (int(list[0])) #nr of words
+    faultyString = list[1] #input string
+    
+    wordDict1 = []
+    
+    for i in range(2,n+2):
+        wordDict1.append(list[i])
+ 
+
+    test = Solution
+    print(Solution.wordBreak(self="", s=faultyString, wordDict=wordDict1))
+    
+    
