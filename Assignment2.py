@@ -1,21 +1,31 @@
-def recursive(index, words):
-    if index == len(corrupt):
-        print(words)  # print all possible combinations
+class Solution:
+    def wordBreak(self, s, wordDict):
+        wordSet = set(wordDict)
+        memo = {}
 
-    temp = ""
-    for i in range(index, len(corrupt)):
-        temp += corrupt[i]
-        try:
-            dictionary[temp]
-            # print(temp, end=" ")
-            recursive(i+1, words+temp+" ")
-        except:
-            continue
+        def helper(sub):
+            if sub in memo:
+                return memo[sub]
 
+            result = []
+            for i in range(len(sub)):
+                prefix = sub[:i+1]
+                if prefix in wordSet:
+                    if prefix == sub:
+                        result.append(prefix)
+                    else:
+                        restOfWords = helper(sub[i+1:])
+                        for phrase in restOfWords:
+                            result.append(prefix + ' ' + phrase)
 
-lines = []
-with open('a2Input.txt') as f:        # rename text file -------------------------------
+            memo[sub] = result
+            return result
+
+        return helper(s)
+
+with open("corrupted.txt") as f:
     lines = f.readlines()
+
 
 dictionary = {}
 count = 0
@@ -31,4 +41,5 @@ for line in lines:
     dictionary[line.strip()] = 1
     count += 1
 
-recursive(0, "")
+for i in (Solution.wordBreak(self="", s=corrupt, wordDict=dictionary)):
+            print(i)
