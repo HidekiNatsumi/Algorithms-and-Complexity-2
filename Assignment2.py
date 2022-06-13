@@ -23,7 +23,7 @@ class Solution:
 
         return helper(s)
 
-with open("corrupted.txt") as f:
+with open("Dictionary.txt") as f:
     lines = f.readlines()
 
 
