@@ -43,3 +43,4 @@ for line in lines:
 
 for i in (Corrector.divider(self="", t=corrupt, inputWords=dictionary)):
             print(i)
+#Collaborators :Erald Caka and Ervin Balla
