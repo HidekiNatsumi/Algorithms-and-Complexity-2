@@ -6,4 +6,5 @@ The task given to us was to :
 <li>After finding the first result and breaking the words the program will find all the possible breakable words in the block of code corresponding with the Dictionary</li>
 </ul>
 --------
+
 <strong>Contributors :[Erald Caka](https://github.com/HidekiNatsumi) and [Ervin Balla](https://github.com/ViniCS2001)</strong>
