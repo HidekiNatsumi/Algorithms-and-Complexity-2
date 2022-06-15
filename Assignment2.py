@@ -23,7 +23,7 @@ class Corrector:
 
         return recursive(t)
 
-with open("Dictionary.txt") as f:
+with open("example.txt") as f:
     lines = f.readlines()
 
 
