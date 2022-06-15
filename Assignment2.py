@@ -1,9 +1,9 @@
-class Solution:
-    def wordBreak(self, s, wordDict):
-        wordSet = set(wordDict)
+class Corrector:
+    def divider(self, t, inputWords):
+        wordSet = set(inputWords)
         memo = {}
 
-        def helper(sub):
+        def recursive(sub):
             if sub in memo:
                 return memo[sub]
 
@@ -14,14 +14,14 @@ class Solution:
                     if prefix == sub:
                         result.append(prefix)
                     else:
-                        restOfWords = helper(sub[i+1:])
+                        restOfWords = recursive(sub[i+1:])
                         for phrase in restOfWords:
                             result.append(prefix + ' ' + phrase)
 
             memo[sub] = result
             return result
 
-        return helper(s)
+        return recursive(t)
 
 with open("Dictionary.txt") as f:
     lines = f.readlines()
@@ -41,5 +41,5 @@ for line in lines:
     dictionary[line.strip()] = 1
     count += 1
 
-for i in (Solution.wordBreak(self="", s=corrupt, wordDict=dictionary)):
+for i in (Corrector.divider(self="", t=corrupt, inputWords=dictionary)):
             print(i)
